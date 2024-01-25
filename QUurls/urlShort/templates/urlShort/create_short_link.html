@@ -1,0 +1,14 @@
+<!-- urlShort/templates/urlShort/create_short_link.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Create Short Link{% endblock %}
+
+{% block content %}
+  <h2>Create Short Link</h2>
+  <form method="post" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Generate Short Link</button>
+  </form>
+{% endblock %}

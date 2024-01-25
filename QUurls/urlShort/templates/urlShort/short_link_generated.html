@@ -1,0 +1,10 @@
+<!-- urlShort/templates/urlShort/short_link_generated.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Short Link Generated{% endblock %}
+
+{% block content %}
+    <h2>Short Link Generated</h2>
+    <p>Your short link is: <a href="{% url 'redirect_to_original' short_code %}">{{ short_code }}</a></p>
+{% endblock %}
