@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     #My apps
     'bootstrap4',
     'urlShort',
+    'file_upload',
     
     'django.contrib.admin',
     'django.contrib.auth',
