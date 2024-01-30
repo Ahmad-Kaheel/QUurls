@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from .forms import FileUploadForm
 from django.core.signing import Signer
 from django.http import HttpResponseBadRequest
+from django.core.files.uploadedfile import UploadedFile
 
 def upload_file(request):
     if request.method == 'POST':
