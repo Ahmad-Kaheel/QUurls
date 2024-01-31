@@ -1,0 +1,10 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}Link Generated{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>Link Generated</h2>
+    <p>Your file upload link: <a href="{{ file_link }}">{{ file_link }}</a></p>
+  </div>
+{% endblock %}
