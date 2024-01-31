@@ -5,8 +5,8 @@ import random
 import string
 
 
-def generate_short_code():
-    return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(4))
+def generate_short_code(number_of_characters=4):
+    return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(number_of_characters))
 
 def create_short_link(request):
     if request.method == 'POST':
