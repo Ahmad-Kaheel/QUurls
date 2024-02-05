@@ -14,8 +14,11 @@ class ShortLinkCreateView(CreateView):
     success_url = reverse_lazy('short_link_generated')
 
     def generate_short_code(self, number_of_characters=4):
-        return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(number_of_characters))
-    
+        while True:
+            short_code = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(number_of_characters))
+            if not ShortLink.objects.filter(short_code=short_code).exists():
+                return short_code
+
     def form_valid(self, form):
         self.model.original_url = form.cleaned_data['original_url']
         short_code = self.generate_short_code()
