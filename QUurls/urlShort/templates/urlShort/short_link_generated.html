@@ -6,5 +6,7 @@
 
 {% block content %}
     <h2>Short Link Generated</h2>
-    <p>Your short link is: <a href="{% url 'redirect_to_original' short_code %}">{{ short_code }}</a></p>
+    <p>Your short link is: <a id="shortLink" href="{% url 'redirect_to_original' short_code %}">{{ short_code }}</a></p>
+    
+    
 {% endblock %}
