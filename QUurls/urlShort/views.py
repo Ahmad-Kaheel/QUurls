@@ -32,7 +32,7 @@ class ShortLinkCreateView(CreateView):
     def get_success_url(self):
         return reverse('short_link_generated', kwargs={'short_code': self.short_code})
     
-class RedirectOriginalView(View):
+class ShortLinkRedirectView(View):
     def get(self, request, short_code):
         short_link = ShortLink.objects.get(short_code=short_code)
         return redirect(short_link.original_url)
