@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import create_short_link, redirect_to_original
+from .views import ShortLinkCreateView, RedirectOriginalView, ShortLinkGeneratedView
 
-urlpatterns  = [
-    path('', create_short_link, name='create_short_link'),
-    path('<str:short_code>/', redirect_to_original, name='redirect_to_original'),
+urlpatterns = [
+    path('', ShortLinkCreateView.as_view(), name='create_short_link'),
+    path('short-link-generated/<str:short_code>/', ShortLinkGeneratedView.as_view(), name='short_link_generated'),
+    path('<str:short_code>/', RedirectOriginalView.as_view(), name='redirect_to_original'),
 ]
