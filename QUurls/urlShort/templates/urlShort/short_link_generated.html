@@ -8,5 +8,43 @@
     <h2>Short Link Generated</h2>
     <p>Your short link is: <a id="shortLink" href="{% url 'redirect_to_original' short_code %}">http://127.0.0.1:8000/{{ short_code }}</a></p>
     
-    
+    <!-- Button to copy the short_code -->
+    <button onclick="copyToClipboard()">Copy Link</button>
+
+    <script>
+        function copyToClipboard() {
+            var copyText = document.getElementById("shortLink");
+            var range = document.createRange();
+            range.selectNode(copyText);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+
+            // Show a temporary alert
+            var alertDiv = document.createElement("div");
+            alertDiv.setAttribute("class", "alert");
+            alertDiv.innerHTML = "Link copied to clipboard!";
+            document.body.appendChild(alertDiv);
+
+            // Remove the alert after 3 seconds
+            setTimeout(function () {
+                document.body.removeChild(alertDiv);
+            }, 3000);
+        }
+    </script>
+
+    <style>
+        .alert {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
 {% endblock %}
