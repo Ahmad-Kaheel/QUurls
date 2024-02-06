@@ -9,6 +9,6 @@ from .models import ShortLink
 
 # show the short code in the admin list
 class ShortLinkAdmin(admin.ModelAdmin):
-    list_display = ('original_url', 'short_code')
+    list_display = ('original_url', 'short_code', 'slug')
     
 admin.site.register(ShortLink, ShortLinkAdmin)

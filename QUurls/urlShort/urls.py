@@ -3,6 +3,6 @@ from .views import ShortLinkCreateView, ShortLinkRedirectView, ShortLinkGenerate
 
 urlpatterns = [
     path('', ShortLinkCreateView.as_view(), name='create_short_link'),
-    path('short-link-generated/<str:short_code>/', ShortLinkGeneratedView.as_view(), name='short_link_generated'),
+    path('short-link-generated/<slug:short_code>/', ShortLinkGeneratedView.as_view(), name='short_link_generated'),
     path('<slug:short_code>/', ShortLinkRedirectView.as_view(), name='short_link_redirect'),
 ]
