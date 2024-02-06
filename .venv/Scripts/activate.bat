@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\LENOVO\Desktop\Ahmad\QU\.venv
+set VIRTUAL_ENV=c:\Users\a.kaheel\Desktop\MyProjects\shorturl & file and text upload secretely\QUurls\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 
