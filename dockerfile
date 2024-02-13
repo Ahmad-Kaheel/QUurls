@@ -1,12 +1,11 @@
-FROM python:3.11-alpine3.18
+FROM python:3.12-alpine3.18
+
+COPY ./requirements.txt /app/requirements.txt
+
+RUN pip install -r /app/requirements.txt
+
+COPY ./QUurls /app
 
 WORKDIR /app
-
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
-
-COPY . . 
-
-COPY ./QUurls/QUurls/manage.py . 
 
 CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
