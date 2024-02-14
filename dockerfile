@@ -1,11 +1,15 @@
 FROM python:3.12-alpine3.18
 
-COPY ./requirements.txt /app/requirements.txt
+ENV PYTHONBUFFERED=1
 
-RUN pip install -r /app/requirements.txt
+COPY ./requirements.txt /django/requirements.txt
 
-COPY ./QUurls /app
+RUN pip install -r /django/requirements.txt
 
-WORKDIR /app
+COPY ./QUurls /django
+
+COPY ./QUurls/QUurls/manage.py /django
+
+WORKDIR /django
 
 CMD [ "python", "manage.py", "runserver", "0.0.0.0:8000" ]
