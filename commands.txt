@@ -3,3 +3,5 @@ docker run --publish 8000:8000 python-django
 docker-compose build 
 docker-compose run app 
 docker-compose up 
+docker-compose run --rm app django-admin startproject core . 
+docker exec -it django_container sh 

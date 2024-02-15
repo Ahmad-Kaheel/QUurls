@@ -80,10 +80,19 @@ WSGI_APPLICATION = 'QUurls.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'my_postgres_db', 
+        'USER': 'ahmad', 
+        'PASSWORD': 'postgres8520', 
+        'HOST': 'db',              # service name in docker-compose 
+        'PORT': '5432',            # default is 5432 
     }
+    
 }
 
 

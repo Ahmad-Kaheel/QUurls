@@ -9,3 +9,15 @@ services:
     image: app:django
     container_name: django_container
     command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: my_postgres_db
+      POSTGRES_USER: ahmad
+      POSTGRES_PASSWORD: postgres8520
+    container_name: postgres_db

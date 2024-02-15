@@ -7,3 +7,5 @@ include==0.2.2
 soupsieve==2.5
 sqlparse==0.4.4
 tzdata==2023.4
+psycopg2-binary
+
